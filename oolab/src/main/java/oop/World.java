@@ -1,28 +1,30 @@
-package oop.model;
+package oop;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import oop.model.presenter.MenuPresenter;
+
+import java.util.Objects;
 
 public class World extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
-        // Tworzenie prostego GUI
-        StackPane root = new StackPane();
-        root.getChildren().add(new Label("Hello, JavaFX World!"));
+    public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("menu.fxml"));
+        GridPane viewRoot = loader.load();
+        MenuPresenter presenter = loader.getController();
 
-        // Scene (szerokość, wysokość)
-        Scene scene = new Scene(root, 400, 300);
+        stage.setTitle("Darwin World - Menu");
 
-        primaryStage.setTitle("JavaFX Simulation");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args); // Rozpocznij JavaFX
+        // Ustawienie sceny i ikony
+        stage.setTitle("Darwin World - Menu");
+        stage.setMaximized(true);
+        stage.setScene(new Scene(viewRoot));
+        stage.show();
     }
 }

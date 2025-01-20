@@ -1,4 +1,7 @@
 package oop.exceptions;
 
-public class InvalidGameParamsException {
+public class InvalidGameParamsException extends Exception {
+    public InvalidGameParamsException() {
+        super("Invalid game parameters.");
+    }
 }

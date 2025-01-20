@@ -2,9 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="oolab" target="21" />
-      <module name="oolab.main" target="21" />
-      <module name="oolab.test" target="21" />
+      <module name="oop" target="21" />
+      <module name="oop.main" target="21" />
+      <module name="oop.test" target="21" />
+      <module name="org.example.projekt_programowanie_obiektowe" target="21" />
+      <module name="org.example.projekt_programowanie_obiektowe.main" target="21" />
+      <module name="org.example.projekt_programowanie_obiektowe.test" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

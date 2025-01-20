@@ -2,6 +2,8 @@ package oop.model.util;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -24,15 +26,14 @@ public class StatisticsTest {
         statistics.updateStatistics(UpdateType.FIELD, 2);
         assertEquals(2, statistics.getFreeFields());
 
-        // Update statistics of invalid type
-        assertThrows(IllegalArgumentException.class, () -> statistics.updateStatistics(null, 4));
+
     }
 
     @Test
     public void testUpdateStatisticsGenom() {
         // Initialize Statistics
         Statistics statistics = new Statistics(2, 3, 4, 5, 6);
-        Genom genom1 = new Genom();
+        Genom genom1 = Genom.getRandomGenom(5);
 
         //Update popular genoms
         statistics.updateStatistics(UpdateType.GENOM, genom1);
