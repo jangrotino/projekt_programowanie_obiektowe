@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="oop.model.presenter.GamePresenter">
+    <center>
+        <GridPane fx:id="mapGrid" style="-fx-background-color: lightgray;" />
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="center" style="-fx-padding: 10;">
+            <Button text="Start Simulation" onAction="#handleStartSimulation" />
+            <Button text="Stop Simulation" onAction="#handleStopSimulation" />
+        </HBox>
+    </bottom>
+</BorderPane>
