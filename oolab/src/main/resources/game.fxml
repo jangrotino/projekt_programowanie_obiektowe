@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import java.net.URL?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.model.presenter.GamePresenter"
+            maxWidth="Infinity" maxHeight="Infinity" style="-fx-background-color: #00fdfd;">
+    <stylesheets>
+        <URL value="@styles/menu.css"/>
+    </stylesheets>
+    <!-- Centrum  symulacji - siatka -->
+    <center>
+        <GridPane fx:id="mapGrid" maxWidth="Infinity" maxHeight="Infinity" hgap="2" vgap="2"
+                  style="-fx-background-color: #854818; -fx-grid-lines-visible: true;" />
+    </center>
+
+    <!-- Panel boczny do wyświetlania statystyk -->
+    <right>
+        <VBox spacing="10" alignment="top_left" style="-fx-padding: 10;">
+            <Label text="Statistics:" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+            <TextArea fx:id="statisticsArea" editable="false" wrapText="true" prefWidth="200" prefHeight="400" />
+            <Label text="Animal Tracking" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+            <TextArea fx:id="animalTracking" editable="false" wrapText="true" prefWidth="200" prefHeight="400" />
+            <Button text="End Tracking" onAction="#endTracking" />
+        </VBox>
+    </right>
+
+    <!-- Przyciski sterujące w dolnym pasku -->
+    <bottom>
+        <HBox spacing="10" alignment="center" style="-fx-padding: 10; -fx-background-color: #F4F4F4;">
+            <Button text="Start Simulation" onAction="#handleStartSimulation" />
+            <Button text="Stop Simulation" onAction="#handleStopSimulation" />
+            <Button text="Show Most Popular fields" onAction="#handleShowMostPopularFields" />
+            <Button text="Show Animals With Most Popular Genom" onAction="#handleShowPopularGenom" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
